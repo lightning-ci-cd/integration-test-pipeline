@@ -1,5 +1,23 @@
-image: ubuntu:latest
-script: |
-  echo ticking1
-  echo ticking2
-  echo hello world
+stages:
+  - name: one
+    jobs:
+      - name: jobA
+        image: ubuntu:latest
+        script: |
+          echo ticking1
+          echo ticking2
+          echo hello world
+      - name: jobB
+        image: ubuntu:latest
+        script: |
+          echo ticking3
+          echo ticking4
+          echo hello world
+  - name: two
+    jobs:
+      - name: jobA
+        image: ubuntu:latest
+        script: |
+          echo ticking1
+          echo ticking2
+          echo hello world
